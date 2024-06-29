@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVgIdOBpLiB0vjFMQgktShQQEpRCoWvdMTGg&s" style="margin-top:100px; height:10px; width:1690px;">
+
+</div>
+<br>
+
+
+
+<h1 style="margin-left: 220px; font-family: 'Times New Roman', serif; font-size: 2rem; font-weight: bold; color: #333; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+  PET ACCESSORIES & FOOD
+</h1>
+<h1 style="margin-left: 220px; font-family: 'Times New Roman', serif; font-size: 1rem; font-weight: bold; color: #333; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+  YOUR WHOLE NEED FOR HEALTHY ANIMAL
+</h1>
+<br>
+<br>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+
+    {% for product in products %}
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <a href="/product/{{ product.id }}" class="btn btn-primary mb-2" style="background-color: black;">Shop Now</a>
+
+            {% if current_user.role == "admin" %}
+            <a href="/edit_product/{{ product.id }}" class="btn btn-primary mb-2" style="background-color: black;">Edit Product</a>
+            <a href="/delete_product/{{ product.id }}" class="btn btn-primary" style="background-color: black;">Delete Product</a>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+

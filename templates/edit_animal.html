@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="container mt-3 p-3">
+    <form class="mt-5" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.animal_name.label.text }}
+        {{ form.animal_name(class="form-control mb-3 mt-2", placeholder=form.animal_name.label.text) }}
+
+        {{ form.animal_text.label.text }}
+        {{ form.animal_text(class="form-control mb-3 mt-2", placeholder=form.animal_text.label.text) }}
+
+        {{ form.animal_image_url.label.text }}
+        {{ form.animal_image_url(class="form-control mb-3 mt-2", placeholder=form.animal_image_url.label.text) }}
+
+        {{ form.submit(class="btn btn-primary mb-3 mt-2") }}
+    </form>
+</div>
+
+
+{% endblock %}

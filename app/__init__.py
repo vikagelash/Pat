@@ -1,0 +1,2 @@
+from extensions import app
+from routes import home,about,login,logout,all_products,all_animals,about_us,search,product,animal,registration,add_product,add_animal,edit_product,edit_animal,delete_product,delete_animal

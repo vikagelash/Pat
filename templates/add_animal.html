@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVgIdOBpLiB0vjFMQgktShQQEpRCoWvdMTGg&s" style="margin-top:100px; height:10px; width:1690px;">
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container mt-3 p-3">
+    <form class="mt-5" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.animal_name.label.text }}
+        {{ form.animal_name(class="form-control mb-3 mt-2", placeholder=form.animal_name.label.text) }}
+
+        {{ form.animal_text.label.text }}
+        {{ form.animal_text(class="form-control mb-3 mt-2", placeholder=form.animal_text.label.text) }}
+
+        {{ form.animal_image_url.label.text }}
+        {{ form.animal_image_url(class="form-control mb-3 mt-2", placeholder=form.animal_image_url.label.text) }}
+
+        {{ form.submit(class="btn btn-primary btn-black mt-2", style="background-color: black; border-color: black;") }}
+    </form>
+</div>
+<br>
+{% endblock %}
